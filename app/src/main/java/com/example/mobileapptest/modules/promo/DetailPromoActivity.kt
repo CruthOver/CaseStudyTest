@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -36,7 +37,7 @@ class DetailPromoActivity : AppCompatActivity() {
 fun BuildDetail(promo: Promo?) {
     if (promo!= null) {
         Column(
-            verticalArrangement = Arrangement.Top, modifier = Modifier.background(Color.White)){
+            verticalArrangement = Arrangement.Top, modifier = Modifier.background(Color.White).fillMaxWidth().fillMaxHeight()){
             AsyncImage(model = promo.image?.formats?.medium?.url, contentDescription = "",
                 modifier = Modifier.fillMaxWidth())
             Text(text = promo.name!!, modifier = Modifier.padding(16.dp))
